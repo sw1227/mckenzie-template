@@ -1,0 +1,11 @@
+# emacs
+*~
+
+# mac
+.DS_Store
+
+# venv
+venv/
+
+# python
+__pycache__/

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+<style>
+ img {
+		 width: 80%;
+		 margin: 0 auto;
+ }
+</style>
+
+{% block content %}
+
+<div>
+		<br>
+		<h3 class="category">ワガハイハ サラマンダー</h3>
+		<img src="{{ url_for('static', filename='img/mckenzie.jpg') }}" class="rounded img-raised">
+		<br>		<br>		<br>
+		<div id="slider" class="slider slider-primary"></div>
+</div>
+
+<script>
+ window.onload = function() {
+		 var slider = document.getElementById("slider");
+		 noUiSlider.create(slider, {
+				 start: 0,
+				 step: 1,
+				 connect: "lower",
+				 range: {
+						 min: -5,
+						 max: 5
+				 }
+		 });
+		 slider.noUiSlider.on("slide", function() {
+				 var value = slider.noUiSlider.get();
+				 console.log(value);
+		 });
+ }
+</script>
+
+{% endblock %}
+
+
